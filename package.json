@@ -1,0 +1,16 @@
+{
+    "name": "trivialfix",
+    "version": "0.0.1",
+    "description": "identify trivial fixes for pkgsrc",
+    "url": "https://github.com/wiedi/trivialfix",
+    "bin": {
+        "trivialfix": "./trivial.js"
+    },
+    "dependencies": {
+        "async": "0.9.x",
+        "carrier": "0.1.x",
+        "findit": "1.2.x",
+        "graceful-fs": "3.0.x",
+        "handlebars": "2.0.x"
+    }
+}
