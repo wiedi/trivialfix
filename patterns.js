@@ -33,5 +33,15 @@ module.exports = {
 		match: /error: '(TIOCGWINSZ|TIOCGSIZE|TIOCGPTN|TIOCSPTLCK|TIOCNOTTY|TIOCLGET)' .*declared.*/g,
 		fix:  "#include <termios.h>",
 		reference: ''
+	},
+	'missing_openssl': {
+		match: /error: .*openssl/gi,
+		fix:  '.include "../../security/openssl/buildlink3.mk"',
+		reference: ''
+	},
+	'missing_zlib': {
+		match: /error: .*zlib/gi,
+		fix:  '.include "../../devel/zlib/buildlink3.mk"',
+		reference: ''
 	}
 }
