@@ -22,28 +22,6 @@ Handlebars.registerHelper('eachSorted', function(context, options) {
 
 var patterns = require('./patterns')
 
-function search(pattern, cb) {
-	ngrep(pattern.match, process.argv[2], function (result) {
-		pattern.result = result.context
-		cb(null, {
-			pkg: path.dirname(result.file).split('/').pop(),
-			info: pattern
-		})
-		
-	})
-}
-
-function aggregate(err, results) {
-	if(err) {
-		console.log(err)
-		process.exit()
-	}
-	pkgs = {}
-	
-	
-	console.log(err, results)
-}
-
 function listFiles(folder, cb) {
 	var finder = findit(folder)
 	var files = []
@@ -54,6 +32,7 @@ function listFiles(folder, cb) {
 		cb(null, files)
 	})
 }
+
 function search(folder, cb) {
 	var results = {}
 	var done = 0
