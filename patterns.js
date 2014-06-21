@@ -43,5 +43,10 @@ module.exports = {
 		match: /error: .*zlib/gi,
 		fix:  '.include "../../devel/zlib/buildlink3.mk"',
 		reference: ''
+	},
+	'broken_smf': {
+		match: /manifest.*No such file or directory/g,
+		fix:  'INSTALLATION_DIRS being set (=, not +=) after bsd.prefs.mk\neither use += or move it before bsd.prefs.mk (variables will be lazy expanded)',
+		reference: ''
 	}
 }
